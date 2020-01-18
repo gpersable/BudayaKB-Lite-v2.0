@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Tambah Budaya</h2>
+<p>Masukkan data budaya yang akan ditambahkan ke dalam sistem</p>
+
+{% if result is defined and result >0 %}
+{% if added == True %}
+<div class="alert alert-info" role="alert">
+    Sukses menambahkan data "{{ namaBudaya }}"
+</div>
+{% elif added == "whitespace detected" %}
+<div class="alert alert-warning" role="alert">
+    Whitespaces are not allowed! Data tidak dimasukkan.
+</div>
+{% elif added == False %}
+<div class="alert alert-danger" role="alert">
+    Data dengan nama "{{ namaBudaya }}" sudah ada
+</div>
+{% endif %}
+{% elif result == 0 %}
+<div class="alert alert-warning" role="alert">
+    Data Kosong
+</div>
+{% endif %}
+
+<form method="POST" , action="" enctype="multipart/form-data">
+    <div class="main-content-form container-fluid">
+        <div class="form-group row">
+            <label for="nama">Nama</label>
+            <input class="form-control" id="nama" type="text" name=nama required>
+        </div>
+        <div class="form-group row">
+            <label for="tipe">Tipe</label>
+            <input class="form-control" id="tipe" type="text" name=tipe required>
+        </div>
+        <div class="form-group row">
+            <label for="prov">Provinsi</label>
+            <input class="form-control" id="prov" type="text" name=prov required>
+        </div>
+        <div class="form-group row">
+            <label for="url">URL Referensi</label>
+            <input class="form-control" id="url" type="url" name=url required>
+        </div>
+        <button class="btn btn-outline-secondary my-2 d-flex ml-auto" type=submit>Tambah Data</button>
+    </div>
+</form>
+
+{% endblock %}

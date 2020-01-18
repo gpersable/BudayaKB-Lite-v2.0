@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Hapus Budaya</h2>
+<p>Masukkan nama data budaya yang akan dihapus dari sistem</p>
+
+{% if result is defined and result >0 %}
+{% if hapus %}
+<div class="alert alert-info" role="alert">
+    Sukses menghapus data "{{ namaBudaya }}"
+</div>
+{% else %}
+<div class="alert alert-danger" role="alert">
+    Data dengan nama "{{ namaBudaya }}" tidak ada dalam sistem
+</div>
+{% endif %}
+{% elif result == 0 %}
+<div class="alert alert-warning" role="alert">
+    Data Kosong
+</div>
+{% endif %}
+
+<form method="POST" , action="" enctype="multipart/form-data">
+    <div class="main-content-form container-fluid">
+        <div class="form-group row">
+            <label for="nama">Nama Data Budaya</label>
+            <input class="form-control" id="nama" type="text" name=nama required>
+        </div>
+        <button class="btn btn-outline-secondary my-2 d-flex ml-auto" type=submit>Hapus Data</button>
+    </div>
+
+</form>
+
+{% endblock %}

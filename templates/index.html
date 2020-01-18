@@ -1,0 +1,129 @@
+<html>
+
+<head>
+	<title>BudayaKB Lite</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<!-- Index Styles -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+	<!-- Google Fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Caveat|Kalam|Montserrat|Open+Sans|Solway|Work+Sans&display=swap"
+		rel="stylesheet">
+
+	<!-- Font Awesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+	{% include "includes/_navbar.html" %}
+	<img class="graphic fa-tasks"
+		src="https://lh3.googleusercontent.com/3pnTNsIUp2IxCspjmKOSS9SYGBNDZxSLYKQ8CxCU6LEW0JKh3tUx6kjh8WCmOCHrhAJdmd9XmbAkMEinadad6oKJeexu5DMJZgWzQrO6RgaMrYcqQi2ZgaGYoyridRNP-EdbWr63=w2400"
+		alt="">
+
+	<div class="title">
+		<h1>BudayaKB Lite v2.0</h1>
+		<h3>Sistem Manajemen Knowledge Base Budaya Indonesia</h3>
+		<a class="btn btn-outline-light" href="#index" role="button">Learn More</a>
+	</div>
+	<div id="index" class="container-fluid">
+		<h1>Selamat Datang di BudayaKB</h1>
+
+		<p class="p1">
+			<img src="https://lh3.googleusercontent.com/UFXWRvMiO7FlqLacnTFwLZ1hUr7NIjHGfYs0qtJ09pnZuzdHoNAUuejkzv7WgB3Gop_ut3NZ3m-JIQwL9dUk4w9lsPsa-vNUt3wJJBhNnHOeP9kmdsZ-kVHVqTxxAaNCn5zhZzsZ=w2400"
+				alt="Batik">
+			Indonesia adalah negara yang kaya akan warisan budaya. Batik, misalnya, merupakan salah satu simbol warisan
+			budaya
+			Indonesia yang telah diakui oleh UNESCO sebagai intangible cultural heritage of humanity.</p>
+
+		<p class="p2">
+			<img src="https://cdn.shortpixel.ai/client/q_lossy,ret_img/https://norecipes.com/wp-content/uploads/2012/01/recipebeef-rendang-recipe.1024x1024.jpg"
+				alt="Beef Rendang">
+			Warisan budaya lainnya yang tidak kalah populer adalah Rendang, yang merupakan ikon kuliner Indonesia dan
+			terpilih sebagai masakan terenak di dunia menurut CNN. Tentunya, masih banyak lagi warisan-warisan budaya
+			Indonesia yang tak kalah menarik.</p>
+	</div>
+	<div id="features" class="container-fluid">
+		<h1>Fitur</h1>
+		<div class="row">
+			<div class="col-lg-3 px-3 py-3">
+				<i class="fas fa-file-import"></i>
+				<h3>Impor & Ekspor</h3>
+				<p>Mengimpor dan mengekspor data budaya</p>
+			</div>
+			<div class="col-lg-3 px-3 py-3">
+				<i class="fas fa-search"></i>
+				<h3>Cari</h3>
+				<p>Mencari data budaya</p>
+			</div>
+			<div class="col-lg-3 px-3 py-3">
+				<i class="fas fa-edit"></i>
+				<h3>Sunting</h3>
+				<p>Menambahkan, mengubah, dan menghapus data budaya</p>
+			</div>
+			<div class="col-lg-3 px-3 py-3">
+				<i class="fas fa-table"></i>
+				<h3>Statistik</h3>
+				<p>Menampilkan statistik data budaya</p>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container-fluid">
+			<h5>© Copyright 2019 BudayaKB Lite v2.0 by gpersable </h5>
+			<p>Icons by Font Awesome<br>Beef Rendang image by norecipes.com</p>
+		</div>
+	</footer>
+
+	<!-- Bootstrap Scripts -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+	</script>
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Smooth Scrolling Script -->
+	<script>
+		$(document).ready(function () {
+			// Add smooth scrolling to all links
+			$(".btn").on('click', function (event) {
+
+				// Make sure this.hash has a value before overriding default behavior
+				if (this.hash !== "") {
+					// Prevent default anchor click behavior
+					event.preventDefault();
+
+					// Store hash
+					var hash = this.hash;
+
+					// Using jQuery's animate() method to add smooth page scroll
+					// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top
+					}, 800, function () {
+
+						// Add hash (#) to URL when done scrolling (default click behavior)
+						window.location.hash = hash;
+					});
+				} // End if
+			});
+		});
+	</script>
+
+</body>
+
+</html>

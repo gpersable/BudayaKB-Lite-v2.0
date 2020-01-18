@@ -1,0 +1,162 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Montserrat;
+}
+
+h1,h2,h3 {
+    margin: 1.5%;
+}
+
+h1 {
+    font-family: Solway;
+    color: #4D57A6;
+}
+
+h3 {
+    color: #C7787B;
+    font-family: Montserrat
+}
+
+/* Home Graphic BG */
+.graphic {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 100%;
+}
+
+@media (max-width: 1000px) {
+    .fa-tasks {
+        display: none;
+    }
+}
+
+/* Home Header */
+.title {
+    margin: 13% 10 17% 10%;
+    text-align: left;
+}
+
+.title h1 {
+    font-size: 3rem;
+}
+
+.title .btn {
+    margin: 20% 0 0 1.5%;
+    border: 1px solid white;
+    background-color: white;
+    color: #4D57A6;
+    font-size: 1.2rem;
+}
+
+.title .btn:hover {
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 0.375rem 0.75rem;
+}
+
+/* Section Selamat Datang */
+#index {
+    background-color: #FE8769;
+    text-align: justify;
+    padding: 5% 10% 10% 10%;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.2rem;
+}
+
+#index h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.p1 {
+    padding-top: 2rem;
+    margin: 100px auto 0 auto;
+    width: 70%;
+    color: white;
+}
+
+.p1 img {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    margin: -3.25rem 2rem 2rem 0;
+    float: left;
+}
+
+.p2 {
+    padding-top: 7rem;
+    margin: auto;
+    width: 70%;
+    color: white;
+}
+
+.p2 img {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    margin: -2.5rem 0 2rem 2rem;
+    float: right;
+}
+
+@media (max-width: 600px) {
+    .p1,.p2 {
+        text-align: justify;
+    }
+}
+
+/* Features */
+#features {
+    padding: 10%;
+    text-align: center;
+}
+
+#features .row {
+    padding-top: 2rem;
+}
+
+#features i {
+    color: #4D57A6;
+    font-size: 3.5rem;
+    margin: 1rem auto;
+    transition: color .5s;
+}
+
+#features i:hover {
+    color: #FE8769;
+    transition: color .5s;
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    background-color: #FE8769;
+    color: white;
+    text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nav-item {
+    margin: 0 0 0 2rem;
+}
+
+.nav-link {
+    transition: color .5s;
+}
+
+.navbar-toggler {
+    border: 0;
+    width: 100%;
+}

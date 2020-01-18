@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+{% block content %}
+<body>
+    <h2>Cari Budaya</h2>
+    <h3>Kriteria Pencarian</h3>
+
+    <form method="POST">
+        
+        <select name="kriteria" class="form-control">
+            <option value="nama">Nama Budaya</option>
+            <option value="tipe">Tipe Budaya</option>
+            <option value="prov">Asal Provinsi Budaya</option>
+        </select>
+        <input name="user_input" class="form-control ml-sm-2 mr-sm-2" type="search" placeholder="Cari" aria-label="Search">
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Cari</button>
+
+    </form>
+
+    {% if result is defined and result >0 %}
+        {% if data_len>0 %}
+
+        {% if user_input != "" %}
+        {% if kriteria == 'nama' %}
+        <h3>Ditemukan {{ data_len }} data dengan nama budaya {{ user_input.title() }}</h3>
+        {% elif kriteria == 'tipe' %}
+        <h3>Ditemukan {{ data_len }} data dengan tipe budaya {{ user_input.title() }}</h3>
+        {% elif kriteria == 'prov' %}
+        <h3>Ditemukan {{ data_len }} data dengan asal provinsi budaya {{ user_input.title() }}</h3>
+        {% endif %}
+        {% else %}
+        {% if kriteria == 'nama' %}
+        <h3>Ditemukan {{ data_len }} data dengan semua nama budaya</h3>
+        {% elif kriteria == 'tipe' %}
+        <h3>Ditemukan {{ data_len }} data dengan semua tipe budaya</h3>
+        {% elif kriteria == 'prov' %}
+        <h3>Ditemukan {{ data_len }} data dengan semua asal provinsi budaya</h3>
+        {% endif %}
+        {% endif %}
+
+        <div class="main-content container-fluid">
+        <div class="table-responsive">
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col">Nama</th>
+                <th scope="col">Tipe</th>
+                <th scope="col">Asal Provinsi</th>
+                <th scope="col">URL Referensi</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item.nama }}</td><td>{{ item.tipe }}</td><td>{{ item.prov }}</td><td><a href="{{ item.url }}" target="_blank">{{ item.url }}</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+        {% else %}
+        <div class="alert alert-danger" role="alert">
+            Data yang Anda cari tidak ada dalam sistem
+        </div>
+        </div>
+        {% endif %}
+
+    {% elif result == 0 %}
+        <h3>Data Kosong</h3>
+    {% endif %}
+</body>
+<style>
+    .form-control {
+        width: 30%;
+        display:inline-block;
+    }
+
+    a {
+        color: #FE8769;
+        text-decoration: none;
+        transition: ease-in .25s;
+    }
+    
+    a:hover {
+        color: #C7787B;
+        text-decoration: none;
+        transition: ease-out .25s;
+    }
+</style>
+{% endblock %}

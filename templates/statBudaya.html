@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<body>
+    <h2>Statistik Budaya</h2>
+    <h3>Kriteria Pencarian Statistik Data Budaya</h3>
+
+    <form method="POST">
+        <select name="kriteria" class="form-control">
+            <option value="all">All</option>
+            <option value="tipe">Tipe Budaya</option>
+            <option value="prov">Asal Provinsi Budaya</option>
+        </select>
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type=submit>Tampilkan</button>
+    </form>
+
+    {% if result is defined and result >0 %}
+    {% if data_is_dict %}
+    {% if kriteria == 'tipe' %}
+    <h3>Statistik Budaya berdasarkan Tipe Budaya</h3>
+    {% elif kriteria == 'prov' %}
+    <h3>Statistik Budaya berdasarkan Asal Provinsi Budaya</h3>
+    {% endif %}
+    <div class="main-content container-fluid">
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Kriteria</th>
+            <th scope="col">Jumlah</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item,value in sorted_jml %}
+        <tr>
+            <td>{{ item }}</td>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    {% else %}
+    <h2>BudayaKB memiliki total {{ data }} data budaya</h2>
+    {% endif %}
+
+    {% elif result == 0 %}
+    <h3>Data Kosong</h3>
+    {% endif %}
+</body>
+<style>
+    .form-control {
+        width: 30%;
+        display:inline-block;
+    }
+</style>
+{% endblock %}

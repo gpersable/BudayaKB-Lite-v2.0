@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2>Ubah Budaya</h2>
+<p>Masukkan data budaya yang akan diubah ke dalam sistem</p>
+
+{% if result is defined and result >0 %}
+{% if changed %}
+<div class="alert alert-info" role="alert">
+    Sukses mengubah data "{{ namaBudaya }}"
+</div>
+{% else %}
+<div class="alert alert-danger" role="alert">
+    Data dengan nama "{{ namaBudaya }}" tidak ada dalam sistem
+</div>
+{% endif %}
+{% elif result == 0 %}
+<div class="alert alert-warning" role="alert">
+    Data Kosong
+</div>
+{% endif %}
+
+<form method="POST" , action="" enctype="multipart/form-data">
+    <div class="main-content-form container-fluid">
+        <div class="form-group row">
+            <label for="nama">Nama</label>
+            <input class="form-control" id="nama" type="text" name=nama required>
+        </div>
+        <div class="form-group row">
+            <label for="tipe">Tipe</label>
+            <input class="form-control" id="tipe" type="text" name=tipe required>
+        </div>
+        <div class="form-group row">
+            <label for="prov">Provinsi</label>
+            <input class="form-control" id="prov" type="text" name=prov required>
+        </div>
+        <div class="form-group row">
+            <label for="url">URL Referensi</label>
+            <input class="form-control" id="url" type="url" name=url required>
+        </div>
+        <button class="btn btn-outline-secondary my-2 d-flex ml-auto" type=submit>Ubah Data</button>
+    </div>
+
+</form>
+{% endblock %}

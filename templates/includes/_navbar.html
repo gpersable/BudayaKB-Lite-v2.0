@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    {% if not index_page %}
+    <a class="navbar-judul" href="/">BudayaKB Lite</a>
+    {% endif %}
+    <button class="navbar-toggler ml-auto mr-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      {% if index_page %}
+      <ul class="navbar-nav ml-auto mr-auto">
+        {% elif not index_page %}
+        <ul class="navbar-nav mr-auto nav-res">
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/imporBudaya">Impor Budaya</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Sunting Budaya
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/tambahBudaya">Tambah Budaya</a>
+              <a class="dropdown-item" href="/ubahBudaya">Ubah Budaya</a>
+              <a class="dropdown-item" href="/hapusBudaya">Hapus Budaya</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cariBudaya">Cari Budaya</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/statsBudaya">Statistik Budaya</a>
+          </li>
+        </ul>
+    </div>
+  </nav>
+
+</body>
+<style>
+  .navbar-judul {
+    font-size: 1.3rem;
+    line-height: inherit;
+    color: #4D57A6;
+    text-decoration: none;
+    font-family: Solway;
+    transition: ease-in .25s;
+  }
+
+  .navbar-judul:hover {
+    text-decoration: none;
+    color: #FE8769;
+    transition: ease-out .25s;
+  }
+
+  .nav-res {
+    margin-left: 10.425rem;
+  }
+
+  @media (max-width: 1000px) {
+    .navbar-judul {
+      display: none;
+    }
+    
+    .nav-res {
+      margin-left: auto;
+    }
+  }
+</style>
+
+</html>
