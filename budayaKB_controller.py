@@ -11,7 +11,6 @@ Meganingrum Arista Jiwanggi (meganingrum@cs.ui.ac.id)
 Gita Permatasari Sujatmiko (gita.permatasari91@ui.ac.id)
 
 Nama		: Gita Permatasari Sujatmiko
-NPM			: 1906400053
 Kelas		: DDP1-C
 Kode Asods	: YAS
 
